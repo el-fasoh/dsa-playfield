@@ -1,0 +1,7 @@
+Algorithms
+-> its a way / steps taken to solve a problem.
+-> should not be based on a computer or programming language.
+-> describe a finite, deterministic, and effective problem-solving method suitable for implementation as a computer program
+
+Examples: Write an algorithm to find the GCD of two non negative numbers p and q
+
