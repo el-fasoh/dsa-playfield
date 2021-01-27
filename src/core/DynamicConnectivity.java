@@ -3,7 +3,7 @@ package core;
 import java.io.FileNotFoundException;
 import java.util.Scanner;
 
-public class Mainer {
+public class DynamicConnectivity {
 
     public static void main(String[] arg){
         try {
