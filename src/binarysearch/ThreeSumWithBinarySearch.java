@@ -8,6 +8,9 @@ import java.util.Calendar;
 import java.util.Scanner;
 import java.util.concurrent.TimeUnit;
 
+/**
+ * Three sum problem for distinct N array object with bruteforce and binary search improvement
+ */
 public class ThreeSumWithBinarySearch {
 
     //Note: Pass the file name and size as arguments to main.
@@ -23,21 +26,25 @@ public class ThreeSumWithBinarySearch {
                 array[index] = scanner.nextInt();
                 index++;
             }
+            boolean runBruteForce = Boolean.parseBoolean(args[2]);
             long start = Calendar.getInstance().getTimeInMillis();
-            System.out.println(countThreeSumWithBruteForce(array, 0));
-            long end = Calendar.getInstance().getTimeInMillis();
-            System.out.println("Time taken in (s): BRUTEFORCE" + TimeUnit.MILLISECONDS.toSeconds(end - start)); //for  8k takes upto 141s
-
+            long end = 0;
+            if (runBruteForce) {
+                System.out.println(countThreeSumWithBruteForce(array, 0));
+                end = Calendar.getInstance().getTimeInMillis();
+                System.out.println("Time taken: BRUTEFORCE" + TimeUnit.MILLISECONDS.toSeconds(end - start) + "(s)"); //for  8k takes upto 141s
+            }
             start = Calendar.getInstance().getTimeInMillis();
             System.out.println(countThreeSumsWithBinarySearch(array, 0));
             end = Calendar.getInstance().getTimeInMillis();
-            System.out.println("Time taken in (s): WITH BINARY-SEARCH" + TimeUnit.MILLISECONDS.toSeconds(end - start)); //for  8k takes upto 1s
+            System.out.println("Time taken: WITH BINARY-SEARCH: " + TimeUnit.MILLISECONDS.toSeconds(end - start) + "(s)"); //for  8k takes upto 1s, 16k apprx 5s
 
         } catch (FileNotFoundException e) {
             e.printStackTrace();
         }
     }
 
+    //Running time N^2Log N
     public static int countThreeSumsWithBinarySearch(int[] items, int sum) {
         Arrays.sort(items);
         int count = 0;
@@ -53,6 +60,7 @@ public class ThreeSumWithBinarySearch {
         return count;
     }
 
+    //Running time N^3
     private static int countThreeSumWithBruteForce(int[] items, int sum) {
         int count = 0;
         for (int i = 0; i < items.length - 2; i++) {
