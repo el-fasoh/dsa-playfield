@@ -35,7 +35,7 @@ class GFG {
         int arr_size = A.length;
 
         //find3Numbers(A, arr_size, sum);
-        findNumbers(A, 22);
+        System.out.println(findNumbers(A, 22).toString());
     }
 
     static List<List<Integer>> findNumbers(int nums[], int sum) {

@@ -11,7 +11,7 @@ public class BinarySearch {
         System.out.println(searchRecursive(array, 3, 0, array.length - 1));
     }
 
-    private static int search(int[] items, int key) {
+    public static int search(int[] items, int key) {
         int low = 0, high = items.length - 1;
         while (low <= high) {
             int mid = low + (high - low) / 2;
@@ -26,7 +26,7 @@ public class BinarySearch {
         return -1;
     }
 
-    private static int searchRecursive(int[] items, int key, int low, int high) {
+    public static int searchRecursive(int[] items, int key, int low, int high) {
         if (low <= high) {
             int mid = low + (high - low) / 2;
             if (items[mid] == key)
