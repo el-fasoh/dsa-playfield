@@ -15,10 +15,14 @@ public class LinkedListStack<T> {
         var currentFirst = first;
         first  = new Node<>(item);
         first.next = currentFirst;
+        size++;
     }
 
     public T pop() {
-        return null;
+        var oldFirst = first;
+        first = oldFirst.next;
+        size--;
+        return oldFirst.item;
     }
 
     public boolean isEmpty() {

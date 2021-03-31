@@ -12,7 +12,7 @@ public class ArrayResizingStack<T> {
 
     public void resize(int length) {
         T[] copy = (T[]) new Object[length];
-        for (int i = 0; i < items.length; i++) {
+        for (int i = 0; i < N; i++) {
             copy[i] = items[i];
         }
         items = copy;
