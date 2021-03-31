@@ -21,6 +21,12 @@ class Solution {
             }
         }
 
+        int value = someNumber("dfdf");
+
         return items;
+    }
+
+    private int someNumber(String text) throws NumberFormatException{
+        return Integer.parseInt(text);
     }
 }
